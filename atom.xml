@@ -36,18 +36,108 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://jjboomm.wjdr.net/2017-08-08/hello-world.html"/>
-    <id>http://jjboomm.wjdr.net/2017-08-08/hello-world.html</id>
-    <published>2017-08-08T03:58:22.000Z</published>
-    <updated>2017-08-08T03:58:22.000Z</updated>
+    <title>使用kcptun对Shadowsocks进行加速</title>
+    <link href="http://jjboomm.wjdr.net/2017-02-05/kcptun.html"/>
+    <id>http://jjboomm.wjdr.net/2017-02-05/kcptun.html</id>
+    <published>2017-02-05T05:21:57.000Z</published>
+    <updated>2017-08-09T08:39:14.000Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;blockquote&gt;
+&lt;p&gt;openvz类vps目前有效的加速方案就是kcptun、finalspeed、net_speeder这三种，其中finalspeed作者已宣布停止维护，而目前新出来最佳的工具无疑是&lt;strong&gt;Kcptun&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;Kcptun 是一个非常简单和快速的，基于 KCP 协议的 UDP 隧道，它可以将 TCP 流转换为 KCP+UDP 流。而 KCP 是一个快速可靠协议，能以比 TCP 浪费10%-20%的带宽的代价，换取平均速度提高 30%-40%，且最大延迟降低三倍的传输效果。&lt;/p&gt;
+&lt;p&gt;Kcptun 是 KCP 协议的一个简单应用，可以用于任意 TCP 网络程序的传输承载，以提高网络流畅度，降低掉线情况。由于 Kcptun 使用 Go 语言编写，内存占用低，而且适用于所有平台，甚至 Arm 平台。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
+    
+      <category term="Linux" scheme="http://jjboomm.wjdr.net/tags/Linux/"/>
+    
+      <category term="kcptun" scheme="http://jjboomm.wjdr.net/tags/kcptun/"/>
+    
+      <category term="shadowsocks" scheme="http://jjboomm.wjdr.net/tags/shadowsocks/"/>
+    
+      <category term="udp" scheme="http://jjboomm.wjdr.net/tags/udp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C语言学习与开发的Sublime Text 3 与 gcc 配置记录</title>
+    <link href="http://jjboomm.wjdr.net/2017-01-09/windows-Sublime_Text_3-gcc.html"/>
+    <id>http://jjboomm.wjdr.net/2017-01-09/windows-Sublime_Text_3-gcc.html</id>
+    <published>2017-01-09T08:02:10.000Z</published>
+    <updated>2017-08-09T08:40:47.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文记录Windows下的C语言开发环境（Sublime Text 3 + gcc）开发环境搭建，包括MinGW的安装，gcc运行c语言，在sublime中运行以及在cmd中运行的方法。&lt;/p&gt;
+&lt;h2 id=&quot;安装：&quot;&gt;&lt;a href=&quot;#安装：&quot; class=&quot;headerlink&quot; title=&quot;安装：&quot;&gt;&lt;/a&gt;安装：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;MinGW&lt;/li&gt;
+&lt;li&gt;Sublime Text 3&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="C语言" scheme="http://jjboomm.wjdr.net/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="Sublime Text 3" scheme="http://jjboomm.wjdr.net/tags/Sublime-Text-3/"/>
+    
+      <category term="gcc" scheme="http://jjboomm.wjdr.net/tags/gcc/"/>
+    
+      <category term="windows" scheme="http://jjboomm.wjdr.net/tags/windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>你喝过哪些曾经误导过你的「毒鸡汤」？</title>
+    <link href="http://jjboomm.wjdr.net/2016-08-23/zhihu-dujitang.html"/>
+    <id>http://jjboomm.wjdr.net/2016-08-23/zhihu-dujitang.html</id>
+    <published>2016-08-23T08:00:20.000Z</published>
+    <updated>2017-08-09T08:29:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;一直以来，知乎在我心里是一个获取知识的圣地，虽也有人劝我“少去破乎”，可我依然不能放弃这个让我读过很多精彩回答的地方。&lt;br&gt;此篇回答为转载，侵权删。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;你很聪明，只要再努点力就好了&quot;&gt;&lt;a href=&quot;#你很聪明，只要再努点力就好了&quot; class=&quot;headerlink&quot; title=&quot;你很聪明，只要再努点力就好了&quot;&gt;&lt;/a&gt;你很聪明，只要再努点力就好了&lt;/h2&gt;&lt;p&gt;有一句毒鸡汤，我相信在座的所有人都喝过，也许直到今天还被他深深毒害。&lt;/p&gt;
+&lt;p&gt;那就是——你很聪明，只要再努点力就好了。&lt;/p&gt;
+&lt;p&gt;FUCK，我知道跟我说这句话的人是出自好意，但你们知道这会害了我吗？因为﻿长期被评价为“很聪明，不用心”的孩子，能力往往配不上自己的野心，需要活在别人的夸奖中，从来不肯也做不到全力以赴。&lt;/p&gt;
+&lt;p&gt;小时候，每次开家长会时，妈妈都告诉我：“老师都说你挺聪明的，就是不努力，要是你努力起来不得了！&lt;/p&gt;
+&lt;p&gt;我很高兴，因为我觉得只有笨人会选择勤奋，自己可以随时发力追赶笨人。只要稍微动一下就可以把笨人甩得远远的。&lt;/p&gt;
+&lt;p&gt;可惜这一天永远没有到来，等我真正发力的时候，我发现我与他们不仅天差地别，最绝望的一点则是——比起他们来，其实我很笨。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="知乎" scheme="http://jjboomm.wjdr.net/tags/%E7%9F%A5%E4%B9%8E/"/>
+    
+      <category term="转载" scheme="http://jjboomm.wjdr.net/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>怎样成为全栈工程师？</title>
+    <link href="http://jjboomm.wjdr.net/2016-06-20/Full-Stack-Engineer.html"/>
+    <id>http://jjboomm.wjdr.net/2016-06-20/Full-Stack-Engineer.html</id>
+    <published>2016-06-20T15:04:12.000Z</published>
+    <updated>2017-08-09T08:30:45.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;作者：顾鹏&lt;br&gt;链接：&lt;a href=&quot;https://www.zhihu.com/question/22420900/answer/21770992&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.zhihu.com/question/22420900/answer/21770992&lt;/a&gt;&lt;br&gt;来源：知乎（转载，侵权删。）&lt;br&gt;著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;做这样一个简单的 app:&lt;br&gt;一个天气应用，干净清爽的界面，天气信息一目了然。它不仅可以精确预测未来 10 天的天气，还可以显示某地的历史天气信息。它具有自定义提醒功能，支持 web 版本， iOS 版， Android 版。&lt;/p&gt;
+&lt;p&gt;为什么想要做这样一个 App ？因为你喜欢旅行，但没找到一个天气 App 可以提供你下个月或者某个特定月份的天气信息；因为你懒你没有每天看天气预报的习惯，你想要在第二天温度达到 30 度以上或者温差有 +/-7 度的时候，获得温馨提示；因为你要成为一个 Full Stack Engineer ，你必须不断训练每个 stack 的能力。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="成长" scheme="http://jjboomm.wjdr.net/tags/%E6%88%90%E9%95%BF/"/>
     
   </entry>
   

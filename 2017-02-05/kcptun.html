@@ -78,12 +78,10 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="jjboomm, 听我扯淡" />
+  <meta name="keywords" content="Linux,kcptun,shadowsocks,udp," />
 
 
 
-
-  
 
 
   <link rel="alternate" href="/atom.xml" title="听我扯淡" type="application/atom+xml" />
@@ -98,17 +96,18 @@
 
 
 
-<meta name="description" content="由于接触Github不多，对Git命令也不是特别熟悉，本篇主要记录如何在Mac上部署Hexo来服务Github Pages。  Hexo什么是HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 安装Hexo安装 Hexo 相当简单。但Hexo依赖于nodejs，需安装nodejs，安装node">
+<meta name="description" content="openvz类vps目前有效的加速方案就是kcptun、finalspeed、net_speeder这三种，其中finalspeed作者已宣布停止维护，而目前新出来最佳的工具无疑是Kcptun。 Kcptun 是一个非常简单和快速的，基于 KCP 协议的 UDP 隧道，它可以将 TCP 流转换为 KCP+UDP 流。而 KCP 是一个快速可靠协议，能以比 TCP 浪费10%-20%的带宽的代价，">
+<meta name="keywords" content="Linux,kcptun,shadowsocks,udp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在Mac上部署Hexo+GithubPages">
-<meta property="og:url" content="http://jjboomm.wjdr.net/2017-08-09/mac-hexo-githubpages.html">
+<meta property="og:title" content="使用kcptun对Shadowsocks进行加速">
+<meta property="og:url" content="http://jjboomm.wjdr.net/2017-02-05/kcptun.html">
 <meta property="og:site_name" content="听我扯淡">
-<meta property="og:description" content="由于接触Github不多，对Git命令也不是特别熟悉，本篇主要记录如何在Mac上部署Hexo来服务Github Pages。  Hexo什么是HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 安装Hexo安装 Hexo 相当简单。但Hexo依赖于nodejs，需安装nodejs，安装node">
+<meta property="og:description" content="openvz类vps目前有效的加速方案就是kcptun、finalspeed、net_speeder这三种，其中finalspeed作者已宣布停止维护，而目前新出来最佳的工具无疑是Kcptun。 Kcptun 是一个非常简单和快速的，基于 KCP 协议的 UDP 隧道，它可以将 TCP 流转换为 KCP+UDP 流。而 KCP 是一个快速可靠协议，能以比 TCP 浪费10%-20%的带宽的代价，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-09T07:38:54.000Z">
+<meta property="og:updated_time" content="2017-08-09T08:39:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在Mac上部署Hexo+GithubPages">
-<meta name="twitter:description" content="由于接触Github不多，对Git命令也不是特别熟悉，本篇主要记录如何在Mac上部署Hexo来服务Github Pages。  Hexo什么是HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 安装Hexo安装 Hexo 相当简单。但Hexo依赖于nodejs，需安装nodejs，安装node">
+<meta name="twitter:title" content="使用kcptun对Shadowsocks进行加速">
+<meta name="twitter:description" content="openvz类vps目前有效的加速方案就是kcptun、finalspeed、net_speeder这三种，其中finalspeed作者已宣布停止维护，而目前新出来最佳的工具无疑是Kcptun。 Kcptun 是一个非常简单和快速的，基于 KCP 协议的 UDP 隧道，它可以将 TCP 流转换为 KCP+UDP 流。而 KCP 是一个快速可靠协议，能以比 TCP 浪费10%-20%的带宽的代价，">
 
 
 
@@ -137,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://jjboomm.wjdr.net/2017-08-09/mac-hexo-githubpages.html"/>
+  <link rel="canonical" href="http://jjboomm.wjdr.net/2017-02-05/kcptun.html"/>
 
 
 
 
 
-  <title>在Mac上部署Hexo+GithubPages | 听我扯淡</title>
+  <title>使用kcptun对Shadowsocks进行加速 | 听我扯淡</title>
   
 
 
@@ -300,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://jjboomm.wjdr.net/2017-08-09/mac-hexo-githubpages.html">
+    <link itemprop="mainEntityOfPage" href="http://jjboomm.wjdr.net/2017-02-05/kcptun.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JJboomm">
@@ -317,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">在Mac上部署Hexo+GithubPages</h1>
+          <h1 class="post-title" itemprop="name headline">使用kcptun对Shadowsocks进行加速</h1>
         
 
         <div class="post-meta">
@@ -329,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-09T09:40:16+08:00">
-                2017-08-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-05T13:21:57+08:00">
+                2017-02-05
               </time>
             
 
@@ -368,52 +367,68 @@
 
       
         <blockquote>
-<p>由于接触Github不多，对Git命令也不是特别熟悉，本篇主要记录如何在Mac上部署Hexo来服务Github Pages。</p>
+<p>openvz类vps目前有效的加速方案就是kcptun、finalspeed、net_speeder这三种，其中finalspeed作者已宣布停止维护，而目前新出来最佳的工具无疑是<strong>Kcptun</strong>。</p>
+<p>Kcptun 是一个非常简单和快速的，基于 KCP 协议的 UDP 隧道，它可以将 TCP 流转换为 KCP+UDP 流。而 KCP 是一个快速可靠协议，能以比 TCP 浪费10%-20%的带宽的代价，换取平均速度提高 30%-40%，且最大延迟降低三倍的传输效果。</p>
+<p>Kcptun 是 KCP 协议的一个简单应用，可以用于任意 TCP 网络程序的传输承载，以提高网络流畅度，降低掉线情况。由于 Kcptun 使用 Go 语言编写，内存占用低，而且适用于所有平台，甚至 Arm 平台。</p>
 </blockquote>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo"></a>什么是Hexo</h3><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>安装 Hexo 相当简单。但Hexo依赖于nodejs，需安装nodejs，安装nodejs最好选择homebrew（homebrew安装依赖ruby），除此之外，还需要安装git。</p>
 <a id="more"></a>
-<h4 id="安装顺序"><a href="#安装顺序" class="headerlink" title="安装顺序"></a>安装顺序</h4><ol>
-<li>homebrew</li>
-<li>nodejs</li>
-<li>git</li>
-<li>Hexo</li>
-</ol>
-<h4 id="安装homebrew"><a href="#安装homebrew" class="headerlink" title="安装homebrew"></a>安装homebrew</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure>
-<h4 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h4><p><code>brew install node</code></p>
-<h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><p><code>brew install git</code></p>
-<h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><p><code>npm install -g hexo-cli</code></p>
-<h3 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h3><p>当hexo成功安装后，需要建立文件夹，进行初始化。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir blog</div><div class="line"><span class="built_in">cd</span> blog</div><div class="line">hexo init</div></pre></td></tr></table></figure>
-<p>此时hexo初始化成功后，将会在blog文件夹中，生成hexo文件。我们进行测试：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo s</div></pre></td></tr></table></figure>
-<p>根据提示，成功则可访问<code>http://localhost:4000</code>进行预览。</p>
-<h2 id="配置Github-Pages"><a href="#配置Github-Pages" class="headerlink" title="配置Github Pages"></a>配置Github Pages</h2><p>在Github上新建一个Repository，并命名为<code>xxxxx.github.io</code>(xxxxx是Github的账号名)。</p>
-<p>仓库建立完成后，打开<code>blog/_config.yml</code>文件配置Hexo和Github取得关联。</p>
-<p>找到文件最下面：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type:</div></pre></td></tr></table></figure>
-<p>修改为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: https://github.com/xxxxx/xxxxx.github.io.git #部署的仓库的SSH</div><div class="line">  branch: master #部署分支， 一般使用master主分支</div><div class="line">  message: update #默认类型</div></pre></td></tr></table></figure>
-<p>需要注意的是：</p>
-<ul>
-<li>网上可能部分教程的<code>type</code>是<code>github</code>，但在Hexo3.0之后，必须填写<code>git</code>。</li>
-<li><code>repository</code>这个参数很重要，它就是用来链接github上创建的仓库。网上有的人使用SSH，但是SSH配置起来相对有些复杂，这里用的是HTTPS方式，也是可以成功的。</li>
-<li><strong>每个参数的<code>：</code>后面必须留有一个空格，否则会出现语法错误。如：<code>type: git</code>，在<code>git</code>之前就有一个空格。</strong></li>
-</ul>
-<p>修改完毕保存后，在终端中输入：</p>
-<p><code>npm install hexo-deployer-git --save</code></p>
-<p>会出现信息：<code>└── hexo-deployer-git@0.1.0</code>，此时就可以把博客部署在Github Pages上了。</p>
-<h2 id="提交博客"><a href="#提交博客" class="headerlink" title="提交博客"></a>提交博客</h2><p>在终端中输入<code>hexo d</code>（<code>d</code>是<code>hexo deployer</code>的缩写），待终端出现<code>INFO  Deploy done: git</code>就说明提交成功，打开浏览器访问<code>xxxxx.github.io</code>即可看到博客。</p>
-<p><strong>注意，本文中涉及到<code>xxxxx</code>请自行替换用户名。</strong></p>
-<h3 id="Hexo简单用法"><a href="#Hexo简单用法" class="headerlink" title="Hexo简单用法"></a>Hexo简单用法</h3><p><code>hexo new “我的博客”</code> 新建一篇文章</p>
-<p><code>hexo g</code> 生成文件</p>
-<p><code>hexo d</code> 部署</p>
-<p><code>hexo clean</code> 清除<code>public</code>文件夹下的文件(网页正常时无需使用此命令)</p>
-<p>其他帮助可以查看：</p>
-<ul>
-<li><a href="https://segmentfault.com/a/1190000002632530" target="_blank" rel="external">Hexo常用命令笔记</a></li>
-<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a></li>
-</ul>
+<p>详细可以查看项目信息：<br>KCP 协议：<a href="https://github.com/skywind3000/kcp" target="_blank" rel="external">https://github.com/skywind3000/kcp</a><br>Kcptun 项目地址：<a href="https://github.com/xtaci/kcptun" target="_blank" rel="external">https://github.com/xtaci/kcptun</a></p>
+<hr>
+<p>对于BandwagonHost的Log_Angeles服务器，延迟基本上是美国服务器中最低的，正常情况下，不会超过200ms，一般情况是180-190ms，尽管拥有1G的网络端口，但是在使用Shadowsocks中还是不太理想，尝试使用kcptun对Shadowsocks进行加速。</p>
+<p>为了排除其他因素，我选择了重新安装系统，在尝试Centos7 64位出现问题，我还是使用了Centos6 64位。新安装的系统要全部重新布置，包括：SSH，Shadowsocks和iptables防火墙。</p>
+<p>在安装Shadowsocks我选择了Shadowsocks-libev 版，并使用了一键安装脚本。<br>同样，安装kcptun时也选择使用了一键安装脚本。在此感谢脚本作者带来的便利！</p>
+<h2 id="安装Shadowsocks-livec："><a href="#安装Shadowsocks-livec：" class="headerlink" title="安装Shadowsocks-livec："></a>安装Shadowsocks-livec：</h2><blockquote>
+<p>本脚本适用环境：<br>系统支持：CentOS 32 或 64 位<br>内存要求：≥128M<br>日期：2016 年 11 月 05 日<br>关于本脚本：<br>一键安装 libev 版的 shadowsocks 最新版本。该版本的特点是内存占用小（600k左右），低 CPU 消耗，甚至可以安装在基于 OpenWRT 的路由器上。</p>
+</blockquote>
+<h3 id="使用方法："><a href="#使用方法：" class="headerlink" title="使用方法："></a>使用方法：</h3><p>使用root用户登录，运行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev.sh</div><div class="line">chmod +x shadowsocks-libev.sh</div><div class="line">./shadowsocks-libev.sh 2&gt;&amp;1 | tee shadowsocks-libev.log</div></pre></td></tr></table></figure>
+<p>安装完成后，脚本提示如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Congratulations, Shadowsocks-libev install completed!</div><div class="line">Your Server IP:your_server_ip</div><div class="line">Your Server Port:your_server_port</div><div class="line">Your Password:your_password</div><div class="line">Your Local IP:127.0.0.1</div><div class="line">Your Local Port:1080</div><div class="line">Your Encryption Method:aes-256-cfb</div><div class="line"></div><div class="line">Welcome to visit:https://teddysun.com/357.html</div><div class="line">Enjoy it!</div></pre></td></tr></table></figure>
+<h3 id="卸载方法："><a href="#卸载方法：" class="headerlink" title="卸载方法："></a>卸载方法：</h3><p>使用 root 用户登录，运行以下命令：</p>
+<p><code>./shadowsocks-libev.sh uninstall</code></p>
+<p>安装完成后即已后台启动 Shadowsocks-libev ，运行：</p>
+<p><code>/etc/init.d/shadowsocks status</code><br>可以查看进程是否启动。<br>本脚本安装完成后，会将 Shadowsocks-libev 加入开机自启动。</p>
+<h3 id="使用命令："><a href="#使用命令：" class="headerlink" title="使用命令："></a>使用命令：</h3><p>启动：<code>/etc/init.d/shadowsocks start</code></p>
+<p>停止：<code>/etc/init.d/shadowsocks stop</code></p>
+<p>重启：<code>/etc/init.d/shadowsocks restart</code></p>
+<p>查看状态：<code>/etc/init.d/shadowsocks status</code></p>
+<p>更为详细的使用请查看作者原博文：<code>https://teddysun.com/357.html</code>，还可以获取更多的一键安装脚本，再次感谢！</p>
+<h2 id="安装kcptun："><a href="#安装kcptun：" class="headerlink" title="安装kcptun："></a>安装kcptun：</h2><h3 id="检查端口："><a href="#检查端口：" class="headerlink" title="检查端口："></a>检查端口：</h3><p>首先需要检查加速地址和端口是否正常，非常重要！</p>
+<p>使用命令：<code>netstat -nl | grep 8388</code></p>
+<p>如果提示以上命令不存在，请输入：<code>ss -nl | grep 8388</code></p>
+<p>注意将以上的8388替换为你的Shadowsocks端口，当然，kcptun不止可以加速Shadowsocks。</p>
+<p>然后你会看到类似下面的输出（着重看显示为红色的部分）：</p>
+<p>情况一：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tcp6       0      0     :::8388                 :::*                    LISTEN     </div><div class="line">udp6       0      0     :::8388                 :::*</div></pre></td></tr></table></figure>
+<p>情况2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tcp       0      0     127.0.0.1:8388                 :::*                    LISTEN     </div><div class="line">udp       0      0     127.0.0.1:8388                 :::*</div></pre></td></tr></table></figure>
+<p>情况3：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tcp       0      0     0.0.0.0:8388                 :::*                    LISTEN     </div><div class="line">udp       0      0     0.0.0.0:8388                 :::*</div></pre></td></tr></table></figure>
+<p>情况4（假如 10.10.10.10 是当前服务器IP）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tcp       0      0     10.10.10.10:8388                 :::*                    LISTEN     </div><div class="line">udp       0      0     10.10.10.10:8388                 :::*</div></pre></td></tr></table></figure>
+<p>若为情况1、情况2和情况3，那么你的加速地址可以为：加速 IP 127.0.0.1，加速端口 8388（你的 Shadowsocks 端口）</p>
+<p>若为情况4，那么你的加速地址为：加速IP 10.10.10.10（你的服务器IP），加速端口8388（你的 Shadowsocks 端口）</p>
+<h3 id="开始安装："><a href="#开始安装：" class="headerlink" title="开始安装："></a>开始安装：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget --no-check-certificate https://raw.githubusercontent.com/kuoruan/kcptun_installer/master/kcptun.sh</div><div class="line">chmod +x ./kcptun.sh</div><div class="line">./kcptun.sh</div></pre></td></tr></table></figure>
+<p>接下来开始根据脚本提示设置kcptun</p>
+<h3 id="配置Kcptun"><a href="#配置Kcptun" class="headerlink" title="配置Kcptun"></a>配置Kcptun</h3><h4 id="设置-Kcptun-的服务端端口："><a href="#设置-Kcptun-的服务端端口：" class="headerlink" title="设置 Kcptun 的服务端端口："></a>设置 Kcptun 的服务端端口：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">请输入 Kcptun Server 端口 [1-65535]:</div><div class="line">(默认: 29900):</div></pre></td></tr></table></figure>
+<p>请输入一个未被占用的端口，Kcptun 运行时将使用此端口。</p>
+<h4 id="设置加速的-IP："><a href="#设置加速的-IP：" class="headerlink" title="设置加速的 IP："></a>设置加速的 IP：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">请输入需要加速的 IP [0.0.0.0 ~ 255.255.255.255]:</div><div class="line">(默认: 127.0.0.1):</div></pre></td></tr></table></figure>
+<p>填入上面获取到的加速 IP，一般是默认，除非你是第四种情况。</p>
+<h4 id="设置需要加速的端口："><a href="#设置需要加速的端口：" class="headerlink" title="设置需要加速的端口："></a>设置需要加速的端口：</h4><figure class="highlight plain"><figcaption><span>[1-65535]:</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(默认: 12948):</div></pre></td></tr></table></figure>
+<p>填入上面获取到的加速端口。</p>
+<p>程序会检查当前是不是有程序占用着此端口，如果你的 Shadowsocks 没在运行，或者没有软件使用此端口，会弹出如下提示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">当前没有软件使用此端口, 确定加速此端口?(y/n)</div></pre></td></tr></table></figure>
+<p>如果你确认 Shadowsocks 运行时会使用此端口，那么输入 “y” 回车即可，此时你应该检查Shadowsocks是否运行，以及端口占用情况（多半还有关于防火墙的原因）。</p>
+<h4 id="设置-Kcptun-密码："><a href="#设置-Kcptun-密码：" class="headerlink" title="设置 Kcptun 密码："></a>设置 Kcptun 密码：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">请输入 Kcptun 密码:</div><div class="line">(如果不想使用密码请留空):</div></pre></td></tr></table></figure>
+<p>这就是说，你可以为 Kcptun 单独设置一个密码，防止被他人恶意使用。这个密码和 SS 的密码没有关系，请不要把它们混淆了。</p>
+<p>再提一句，Kcptun 和 Shadowsocks 没有任何关系，请不要脑补它们之间存在任何联系，Kcptun 你可以理解为一款网络加速软件，只不过它是通过将 TCP 协议转换为 UDP 协议，然后再通过大量的发送数据包，浪费了带宽以换取网速的提升。它能加速所有以 TCP 协议传输数据的软件，不单单是 Shadowsocks。只是大家都用来……你懂的</p>
+<p>回到上面的密码设置问题，如果你这里选择直接回车，也就是代表你不自定义密码。但是 Kcptun 有一个默认的密码，这个密码是：  it’s a secrect 。</p>
+<p>如果你这里选择不设置密码，那么客户端的参数里边就不需要加 –key 这一参数，但是 Kcptun 还是会用上面一个密码做默认值。</p>
+<h4 id="禁用压缩"><a href="#禁用压缩" class="headerlink" title="禁用压缩"></a>禁用压缩</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">是否禁用数据压缩?</div><div class="line">(默认: 不禁用) [y/n]:</div></pre></td></tr></table></figure>
+<p>这个选项是什么意思呢？Kcptun 默认是启用压缩的，也就是说是默认是n，如果你这里设置为 y，也就是配置为 nocomp:true，那么就是禁用压缩。</p>
+<p>许多朋友这里设置的是保持默认（启用压缩），而偏偏在软件之中设置为禁用压缩（勾上对钩是禁用），当然就连不上咯。</p>
+<p>其他配置项不用我说了，如果你了解它是干什么的，可以自定义配置。如果不知道，那么直接回车使用默认参数。</p>
+<p>但是，使用默认参数，是有可能浪费大量流量的，你会发现你的流量像泄洪一样快速减少，你需要会调节参数，套用官方的说明。</p>
 <hr>
 
       
@@ -467,6 +482,18 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/kcptun/" rel="tag"># kcptun</a>
+          
+            <a href="/tags/shadowsocks/" rel="tag"># shadowsocks</a>
+          
+            <a href="/tags/udp/" rel="tag"># udp</a>
+          
+        </div>
+      
 
       
       
@@ -476,8 +503,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017-02-05/kcptun.html" rel="next" title="使用kcptun对Shadowsocks进行加速">
-                <i class="fa fa-chevron-left"></i> 使用kcptun对Shadowsocks进行加速
+              <a href="/2017-01-09/windows-Sublime_Text_3-gcc.html" rel="next" title="C语言学习与开发的Sublime Text 3 与 gcc 配置记录">
+                <i class="fa fa-chevron-left"></i> C语言学习与开发的Sublime Text 3 与 gcc 配置记录
               </a>
             
           </div>
@@ -485,6 +512,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017-08-09/mac-hexo-githubpages.html" rel="prev" title="在Mac上部署Hexo+GithubPages">
+                在Mac上部署Hexo+GithubPages <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -653,7 +684,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo"><span class="nav-number">1.</span> <span class="nav-text">Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Hexo"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">1.2.</span> <span class="nav-text">安装Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装顺序"><span class="nav-number">1.2.1.</span> <span class="nav-text">安装顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装homebrew"><span class="nav-number">1.2.2.</span> <span class="nav-text">安装homebrew</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装nodejs"><span class="nav-number">1.2.3.</span> <span class="nav-text">安装nodejs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装git"><span class="nav-number">1.2.4.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装hexo"><span class="nav-number">1.2.5.</span> <span class="nav-text">安装hexo</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化Hexo"><span class="nav-number">1.3.</span> <span class="nav-text">初始化Hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Github-Pages"><span class="nav-number">2.</span> <span class="nav-text">配置Github Pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交博客"><span class="nav-number">3.</span> <span class="nav-text">提交博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo简单用法"><span class="nav-number">3.1.</span> <span class="nav-text">Hexo简单用法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Shadowsocks-livec："><span class="nav-number">1.</span> <span class="nav-text">安装Shadowsocks-livec：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方法："><span class="nav-number">1.1.</span> <span class="nav-text">使用方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载方法："><span class="nav-number">1.2.</span> <span class="nav-text">卸载方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用命令："><span class="nav-number">1.3.</span> <span class="nav-text">使用命令：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装kcptun："><span class="nav-number">2.</span> <span class="nav-text">安装kcptun：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#检查端口："><span class="nav-number">2.1.</span> <span class="nav-text">检查端口：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始安装："><span class="nav-number">2.2.</span> <span class="nav-text">开始安装：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Kcptun"><span class="nav-number">2.3.</span> <span class="nav-text">配置Kcptun</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置-Kcptun-的服务端端口："><span class="nav-number">2.3.1.</span> <span class="nav-text">设置 Kcptun 的服务端端口：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置加速的-IP："><span class="nav-number">2.3.2.</span> <span class="nav-text">设置加速的 IP：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置需要加速的端口："><span class="nav-number">2.3.3.</span> <span class="nav-text">设置需要加速的端口：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置-Kcptun-密码："><span class="nav-number">2.3.4.</span> <span class="nav-text">设置 Kcptun 密码：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#禁用压缩"><span class="nav-number">2.3.5.</span> <span class="nav-text">禁用压缩</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
