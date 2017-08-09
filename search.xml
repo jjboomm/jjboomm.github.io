@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[在Mac上部署Hexo+GithubPages]]></title>
+    <url>%2F2017-08-09%2Fmac-hexo-githubpages.html</url>
+    <content type="text"><![CDATA[由于接触Github不多，对Git命令也不是特别熟悉，本篇主要记录如何在Mac上部署Hexo来服务Github Pages。 Hexo什么是HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 安装Hexo安装 Hexo 相当简单。但Hexo依赖于nodejs，需安装nodejs，安装nodejs最好选择homebrew（homebrew安装依赖ruby），除此之外，还需要安装git。 安装顺序 homebrew nodejs git Hexo 安装homebrewruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot; 安装nodejsbrew install node 安装gitbrew install git 安装hexonpm install -g hexo-cli 初始化Hexo当hexo成功安装后，需要建立文件夹，进行初始化。 123mkdir blogcd bloghexo init 此时hexo初始化成功后，将会在blog文件夹中，生成hexo文件。我们进行测试： 12hexo ghexo s 根据提示，成功则可访问http://localhost:4000进行预览。 配置Github Pages在Github上新建一个Repository，并命名为xxxxx.github.io(xxxxx是Github的账号名)。 仓库建立完成后，打开blog/_config.yml文件配置Hexo和Github取得关联。 找到文件最下面： 1234# Deployment## Docs: https://hexo.io/docs/deployment.htmldeploy: type: 修改为： 12345deploy: type: git repository: https://github.com/xxxxx/xxxxx.github.io.git #部署的仓库的SSH branch: master #部署分支， 一般使用master主分支 message: update #默认类型 需要注意的是： 网上可能部分教程的type是github，但在Hexo3.0之后，必须填写git。 repository这个参数很重要，它就是用来链接github上创建的仓库。网上有的人使用SSH，但是SSH配置起来相对有些复杂，这里用的是HTTPS方式，也是可以成功的。 每个参数的：后面必须留有一个空格，否则会出现语法错误。如：type: git，在git之前就有一个空格。 修改完毕保存后，在终端中输入： npm install hexo-deployer-git --save 会出现信息：└── hexo-deployer-git@0.1.0，此时就可以把博客部署在Github Pages上了。 提交博客在终端中输入hexo d（d是hexo deployer的缩写），待终端出现INFO Deploy done: git就说明提交成功，打开浏览器访问xxxxx.github.io即可看到博客。 注意，本文中涉及到xxxxx请自行替换用户名。 Hexo简单用法hexo new “我的博客” 新建一篇文章 hexo g 生成文件 hexo d 部署 hexo clean 清除public文件夹下的文件(网页正常时无需使用此命令) 其他帮助可以查看： Hexo常用命令笔记 Hexo]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2017-08-08%2Fhello-world.html</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>

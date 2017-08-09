@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>听我扯淡</title>
+  <subtitle>记录学习，也随便写写。</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://jjboomm.wjdr.net/"/>
+  <updated>2017-08-09T06:42:14.000Z</updated>
+  <id>http://jjboomm.wjdr.net/</id>
+  
+  <author>
+    <name>JJboomm</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在Mac上部署Hexo+GithubPages</title>
+    <link href="http://jjboomm.wjdr.net/2017-08-09/mac-hexo-githubpages.html"/>
+    <id>http://jjboomm.wjdr.net/2017-08-09/mac-hexo-githubpages.html</id>
+    <published>2017-08-09T01:40:16.000Z</published>
+    <updated>2017-08-09T06:42:14.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;由于接触Github不多，对Git命令也不是特别熟悉，本篇主要记录如何在Mac上部署Hexo来服务Github Pages。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Hexo&quot;&gt;&lt;a href=&quot;#Hexo&quot; class=&quot;headerlink&quot; title=&quot;Hexo&quot;&gt;&lt;/a&gt;Hexo&lt;/h2&gt;&lt;h3 id=&quot;什么是Hexo&quot;&gt;&lt;a href=&quot;#什么是Hexo&quot; class=&quot;headerlink&quot; title=&quot;什么是Hexo&quot;&gt;&lt;/a&gt;什么是Hexo&lt;/h3&gt;&lt;p&gt;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。&lt;/p&gt;
+&lt;h3 id=&quot;安装Hexo&quot;&gt;&lt;a href=&quot;#安装Hexo&quot; class=&quot;headerlink&quot; title=&quot;安装Hexo&quot;&gt;&lt;/a&gt;安装Hexo&lt;/h3&gt;&lt;p&gt;安装 Hexo 相当简单。但Hexo依赖于nodejs，需安装nodejs，安装nodejs最好选择homebrew（homebrew安装依赖ruby），除此之外，还需要安装git。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://jjboomm.wjdr.net/2017-08-08/hello-world.html"/>
+    <id>http://jjboomm.wjdr.net/2017-08-08/hello-world.html</id>
+    <published>2017-08-08T03:58:22.000Z</published>
+    <updated>2017-08-08T03:58:22.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
