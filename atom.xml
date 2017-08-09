@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jjboomm.wjdr.net/"/>
-  <updated>2017-08-09T07:38:54.000Z</updated>
+  <updated>2017-08-09T13:13:50.000Z</updated>
   <id>http://jjboomm.wjdr.net/</id>
   
   <author>
@@ -14,6 +14,74 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PHP数据类型（data type）笔记</title>
+    <link href="http://jjboomm.wjdr.net/2017-08-09/php%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html"/>
+    <id>http://jjboomm.wjdr.net/2017-08-09/php数据类型.html</id>
+    <published>2017-08-09T09:53:44.000Z</published>
+    <updated>2017-08-09T13:13:50.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;数据类型&quot;&gt;&lt;a href=&quot;#数据类型&quot; class=&quot;headerlink&quot; title=&quot;数据类型&quot;&gt;&lt;/a&gt;数据类型&lt;/h2&gt;&lt;h3 id=&quot;数据类型概念&quot;&gt;&lt;a href=&quot;#数据类型概念&quot; class=&quot;headerlink&quot; title=&quot;数据类型概念&quot;&gt;&lt;/a&gt;数据类型概念&lt;/h3&gt;&lt;p&gt;数据类型：data type。&lt;/p&gt;
+&lt;p&gt;在PHP中，数据类型指的是存储数据本身的类型，并不是变量的类型。PHP是一种弱类型语言，变量本身没有数据类型。&lt;/p&gt;
+&lt;h2 id=&quot;数据类型分类&quot;&gt;&lt;a href=&quot;#数据类型分类&quot; class=&quot;headerlink&quot; title=&quot;数据类型分类&quot;&gt;&lt;/a&gt;数据类型分类&lt;/h2&gt;&lt;p&gt;在PHP中，将数据分为三大类八小类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;简单（基本）数据类型：四小类&lt;ul&gt;
+&lt;li&gt;整型：int/integer，系统分配4个字节存储，表示整数型（有前提）&lt;/li&gt;
+&lt;li&gt;浮点型：float/double，系统分类8个字节存储，表示小数或整型存不下的整数&lt;/li&gt;
+&lt;li&gt;字符串型：string，系统根据实际长度分配，表示字符串（引号）&lt;/li&gt;
+&lt;li&gt;布尔类型：bool/boolean， 表示布尔类型，只有两个值：&lt;code&gt;true&lt;/code&gt;和&lt;code&gt;false&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;复合数据类型&lt;ul&gt;
+&lt;li&gt;对象类型：object，存放对象（面向对象）&lt;/li&gt;
+&lt;li&gt;数组类型：array，存储多个数据（一次性） &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;特殊数据类型&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;资源类型：resource，存放资源数据（PHP外部数据，如数据库、文件）&lt;/li&gt;
+&lt;li&gt;空类型：NULL，只有一个值：&lt;code&gt;NULL&lt;/code&gt;，不能运算&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="php" scheme="http://jjboomm.wjdr.net/tags/php/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP常量（canst/canstant）笔记</title>
+    <link href="http://jjboomm.wjdr.net/2017-08-09/PHP%E5%B8%B8%E9%87%8F.html"/>
+    <id>http://jjboomm.wjdr.net/2017-08-09/PHP常量.html</id>
+    <published>2017-08-09T09:02:34.000Z</published>
+    <updated>2017-08-09T13:09:14.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;PHP基础-常量&quot;&gt;&lt;a href=&quot;#PHP基础-常量&quot; class=&quot;headerlink&quot; title=&quot;PHP基础-常量&quot;&gt;&lt;/a&gt;PHP基础-常量&lt;/h2&gt;&lt;h3 id=&quot;常量基本概念&quot;&gt;&lt;a href=&quot;#常量基本概念&quot; class=&quot;headerlink&quot; title=&quot;常量基本概念&quot;&gt;&lt;/a&gt;常量基本概念&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;常亮与变量一样，都是用来保存数据的。但与变量不同的是，常亮不能被重新赋值，也不能被unset()销毁。&lt;/li&gt;
+&lt;li&gt;常亮的赋值只能在定义时赋值。&lt;/li&gt;
+&lt;li&gt;有效的常量名以字符或下划线开头（常量名称前面没有$符号），由字母下划线和数字组成，一般使用大写命名，以便区分变量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;常量定义形式&quot;&gt;&lt;a href=&quot;#常量定义形式&quot; class=&quot;headerlink&quot; title=&quot;常量定义形式&quot;&gt;&lt;/a&gt;常量定义形式&lt;/h3&gt;&lt;p&gt;PHP中常量在5.3版本后有两种定义形式：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用定义常量的函数：define(‘常量名’,’值’)；&lt;/li&gt;
+&lt;li&gt;使用定义常量的语法结构：const 常量名=值；(5.3版本以后才有)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	define(&lt;span class=&quot;string&quot;&gt;&#39;PI&#39;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3.14159&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; PI; &lt;span class=&quot;comment&quot;&gt;//3.14159&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; PI = &lt;span class=&quot;number&quot;&gt;3.14&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; PI; &lt;span class=&quot;comment&quot;&gt;//3.14&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;需要注意的是：&lt;code&gt;define&lt;/code&gt;和&lt;code&gt;const&lt;/code&gt;定义的常量是有区别的，区别在于访问权限。&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="php" scheme="http://jjboomm.wjdr.net/tags/php/"/>
+    
+  </entry>
   
   <entry>
     <title>在Mac上部署Hexo+GithubPages</title>
